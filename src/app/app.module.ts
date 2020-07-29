@@ -1,3 +1,4 @@
+import { TarefasModule } from './tarefas/tarefas.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,7 +16,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    TarefasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
