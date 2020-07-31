@@ -9,6 +9,10 @@ export const TarefasRoute: Routes = [
     {
         path: 'tarefas/listar',
         component: ListarTarefasComponent,
+    },
+    {
+        path: 'tarefas/cadastrar',
+        component: ListarTarefasComponent,
     }
 ];
 

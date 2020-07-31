@@ -16,15 +16,9 @@ export class ListarTarefasComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.concluidos = [
-      new Tarefa(1, 'Concluido', 'testando o cara', true),
-      new Tarefa(2, 'Concluido2', 'testando o cara2', true),
-    ];
+    this.afazer = this.listarAfazer();
 
-    this.afazer = [
-      new Tarefa(3, 'A fazer', 'testando o cara', false),
-    ];
-
+    this.concluidos = this.listarConcluidos();
   }
 
   listarTodos(): Tarefa[]{
@@ -37,6 +31,11 @@ export class ListarTarefasComponent implements OnInit {
 
   listarAfazer(): Tarefa[]{
     return this.tarefaService.listarAfazer();
+  }
+
+  remover(id: number): void{
+    this.tarefaService.remover(id);
+    this.ngOnInit();
   }
 
 }

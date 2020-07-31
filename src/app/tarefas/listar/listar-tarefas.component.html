@@ -18,7 +18,7 @@
                                   <button mat-raised-button color="primary">EDITAR</button>
                                   <button mat-raised-button class="primary-green">CONCLUIR</button>
                               </mat-card-actions>
-                              <button mat-icon-button aria-label="Example icon button with a menu icon" class="top-corner">
+                              <button mat-icon-button aria-label="Example icon button with a menu icon" (click)="remover(tarefa.id)" class="top-corner">
                                   <mat-icon>close</mat-icon>
                               </button>
                           </mat-card>

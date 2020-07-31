@@ -1,0 +1,34 @@
+button:focus {
+    outline: none !important;
+}
+
+
+.min-with-dialog{
+    min-width: 500px !important;
+}
+
+@media (max-width: 600px) {
+    .min-with-dialog{
+        min-width: 100%;
+    }
+    
+  }
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .color-verde{
+      background-color: #03DAC6;
+      color: #fff;
+  }
+
+  .text-right {
+    text-align: end;
+}
