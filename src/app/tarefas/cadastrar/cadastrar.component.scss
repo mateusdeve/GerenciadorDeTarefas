@@ -1,0 +1,10 @@
+.bottom-corner{
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 100;
+}
+
+button:focus {
+    outline: none !important;
+}

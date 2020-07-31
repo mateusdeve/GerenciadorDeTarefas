@@ -1,37 +1,63 @@
 <div class="container">
-    <mat-tab-group mat-align-tabs="start">
-        <mat-tab label="A Fazer">
-            <div fxLayout="row" fxLayoutAlign="center center" class="card-mt">
-                <mat-card class="example-card"
-                fxFlex="0 1 calc(33.3% - 11px)"
-                fxFlex.lt-md="0 1 calc(50% - 11px)"
-                fxFlex.lt-sm="100%">
-                    <mat-card-header>
-                      <mat-card-title>
-                          Nome
-                          <button class="itens-end" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                            <mat-icon>close</mat-icon>
-                          </button>
-                      </mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                      <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                        bred for hunting.
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions class="text-end">
-                      <button mat-button>EDITAR</button>
-                      <button mat-button>CONCLUIR</button>
-                    </mat-card-actions>
-                  </mat-card>
-            </div>
+  <div class="row">
+      <div class="col-12">
+          <mat-tab-group>
+              <mat-tab label="A fazer">
 
-        </mat-tab>
-        <mat-tab label="Concluido">Content 2</mat-tab>
-    </mat-tab-group>
-    <button mat-fab color="primary" class="btn-criar" aria-label="Example icon button with a delete icon">
-        <mat-icon>add</mat-icon>
-    </button>
+                  <div fxLayout="row" fxLayoutAlign="start center" >
+                      <div class="d-inline-block mr-2" *ngFor="let tarefa of afazer">
+                          <mat-card class="example-card mt-2">
+                              <mat-card-header>
+                                  <mat-card-title> {{ tarefa.nome }} </mat-card-title>
+                                  <mat-card-subtitle> {{ tarefa.concluido ? "Concluido" : "A fazer" }} </mat-card-subtitle>
+                              </mat-card-header>
+                              <mat-card-content>
+                                  <p> {{ tarefa.descricao }} </p>
+                              </mat-card-content>
+                              <mat-card-actions class="text-right">
+                                  <button mat-raised-button color="primary">EDITAR</button>
+                                  <button mat-raised-button class="primary-green">CONCLUIR</button>
+                              </mat-card-actions>
+                              <button mat-icon-button aria-label="Example icon button with a menu icon" class="top-corner">
+                                  <mat-icon>close</mat-icon>
+                              </button>
+                          </mat-card>
+                      </div>
+                  </div>
+              </mat-tab>
+
+              <mat-tab label="Concluídas"> 
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-12">
+                              <div class="d-inline-block mr-2" *ngFor="let tarefa of concluidos">
+                                  <mat-card class="example-card mt-2">
+                                      <mat-card-header 
+                                      fxFlex="0 1 calc(33.3% - 11px)"
+                                      fxFlex.lt-md="0 1 calc(50% - 11px)"
+                                      fxFlex.lt-sm="100%"
+                                      >
+                                          <mat-card-title> {{ tarefa.nome }} </mat-card-title>
+                                          <mat-card-subtitle> {{ tarefa.concluido ? "Concluido" : "A fazer" }} </mat-card-subtitle>
+                                      </mat-card-header>
+                                      <mat-card-content>
+                                          <p> {{ tarefa.descricao }} </p>
+                                      </mat-card-content>
+                                      <mat-card-actions class="text-right">
+                                          <button mat-raised-button color="primary">EDITAR</button>
+                                          <button mat-raised-button class="primary-green">CONCLUIR</button>
+                                      </mat-card-actions>
+                                      <button mat-icon-button aria-label="Example icon button with a menu icon" class="top-corner">
+                                          <mat-icon>close</mat-icon>
+                                      </button> 
+                                  </mat-card>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </mat-tab>
+          </mat-tab-group>
+        </div>
+        <app-cadastrar></app-cadastrar>
+  </div>
 </div>

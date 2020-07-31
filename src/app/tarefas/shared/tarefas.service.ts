@@ -13,7 +13,19 @@ export class TarefasService {
     return tarefas ? JSON.parse(tarefas) : [];
   }
 
-  cadastrar(tarefa : Tarefa): void{
+  listarConcluidos(): Tarefa[] {
+    const tarefas = this.listarTodos();
+    const concluidos = tarefas.filter(obj => obj.concluido === true);
+    return concluidos ? concluidos : [];
+  }
+
+  listarAfazer(): Tarefa[] {
+    const tarefas = this.listarTodos();
+    const concluidos = tarefas.filter(obj => obj.concluido === false);
+    return concluidos ? concluidos : [];
+  }
+
+  cadastrar(tarefa: Tarefa): void{
     const tarefas = this.listarTodos();
     tarefa.id = new Date().getTime();
     tarefas.push(tarefa);

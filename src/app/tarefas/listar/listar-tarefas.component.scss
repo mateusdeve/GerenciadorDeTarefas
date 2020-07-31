@@ -1,0 +1,45 @@
+button:focus {
+    outline: none !important;
+}
+
+.px-2 {
+    padding: 0 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mr-2 {
+    margin-right: 1rem;
+}
+
+.example-card {
+    max-width: 400px;
+    min-width: 400px;
+}
+
+.primary-green {
+    color: #fff;
+    background-color: #19b86b
+}
+
+.text-right {
+    text-align: end;
+}
+
+.top-corner {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.bottom-corner {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
